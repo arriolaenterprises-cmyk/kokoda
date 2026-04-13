@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokoda Footsteps Trekking | Premium Trekking Experience</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        :root {
+            --primary: #1b3022; /* Deep Forest */
+            --accent: #c5a059;  /* Gold/Brass */
+            --text: #1a1a1a;
+            --light: #f4f4f2;
+            --white: #ffffff;
+            --bg: #fcfcfc;
+        }
+
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--text); scroll-behavior: smooth; overflow-x: hidden; }
+        
+/* --- Navbar --- */
+nav { 
+    position: fixed; 
+    width: 100%; 
+    padding: 20px 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 1000; 
+    transition: all 0.4s ease;
+}
+
+/* Fix: Removed space in :not and ensured all text transitions */
+.nav-scrolled { 
+    background: var(--white); 
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1); 
+    padding: 12px 5%; 
+}
+
+/* This handles the color swap on scroll */
+.nav-scrolled .logo-text, 
+.nav-scrolled .nav-links a:not(.btn-reserve) { 
+    color: var(--text) !important; 
+}
+
+.logo-container { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+.logo-img { height: 55px; width: auto; border-radius: 50%; }
+.logo-text { 
+    font-family: 'Playfair Display'; 
+    font-weight: 700; 
+    color: var(--white); 
+    font-size: 1.1rem; 
+    letter-spacing: 1px; 
+    transition: 0.3s; 
+}
+.logo-text span { font-weight: 300; opacity: 0.8; }
+
+/* Navigation Links Styling */
+.nav-links { display: flex; align-items: center; gap: 30px; }
+
+.nav-links a { 
+    transition: all 0.3s ease; 
+    display: inline-block; 
+}
+
+/* Unified Hover: Makes "The Experience" hover like the button */
+.nav-links a:hover { 
+    transform: translateY(-2px); 
+    filter: brightness(1.1); 
+}
+
+/* Specific styling for the standard link vs the button */
+.nav-links a:not(.btn-reserve) {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+.nav-links a:not(.btn-reserve):hover {
+    color: var(--accent) !important; /* Glows gold on hover */
+    text-shadow: 0 4px 10px rgba(197, 160, 89, 0.3); 
+
+}
+
+.btn-reserve { 
+    background: var(--accent);  
+    color: var(--white) !important; 
+    padding: 12px 28px; 
+    border-radius: 2px; 
+    font-weight: 600;
+    text-decoration: none; 
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+    text-transform: uppercase; 
+    font-size: 0.8rem;
+}
+
+.btn-reserve:hover { 
+    box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4); background: var(--accent); background: var(--primary);
+}
+
+
+        /* --- Hero Slider --- */
+        .hero-slider { height: 100vh; width: 100%; }
+        .swiper-slide { position: relative; overflow: hidden; background: #000; }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; opacity: 0.75; }
+        .hero-overlay { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            display: flex; align-items: center; justify-content: center; 
+            text-align: center; color: white; padding: 0 10%;
+        }
+        .hero-text h1 { font-family: 'Playfair Display'; font-size: clamp(2.5rem, 8vw, 5.5rem); margin: 10px 0; line-height: 1.1; }
+        .hero-text p { letter-spacing: 4px; font-size: 0.9rem; font-weight: 400; color: var(--accent); }
+        .hero-quote { display: block; font-family: 'Playfair Display'; font-style: italic; margin-top: 20px; font-size: 1.3rem; opacity: 0.9; }
+
+        /* --- Stats & Grid Layouts --- */
+        .stat-bar { background: var(--primary); color: white; padding: 40px 0; display: flex; justify-content: space-around; text-align: center; }
+        .stat-item h3 { font-family: 'Playfair Display'; font-size: 2.5rem; color: var(--accent); margin: 0; }
+        .stat-item p { margin: 5px 0 0; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; }
+
+        section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        
+        .image-reveal img { 
+            width: 100%; height: 500px; object-fit: cover; 
+            box-shadow: 20px 20px 0px var(--primary); border-radius: 4px; 
+        }
+
+/* --- Gallery Grid Fix --- */
+.offers { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; 
+    margin-top: 40px;
+   
+}
+
+.offer { 
+    background: #1a1a1a; /* Dark gray/black for the card body */
+    border-radius: 12px; 
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+    text-decoration: none;
+}
+
+.offer:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+/* Image Section */
+.offer img { 
+    width: 100%; 
+    height: 200px; /* Fixed height for the photo part */
+    object-fit: cover; 
+    display: block;
+}
+
+/* Text Section (Replacing the white space) */
+.offer-content { 
+    padding: 20px;
+    background: #1a1a1a; /* Matches card body */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.offer strong { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.15rem; 
+    color: var(--accent); /* Using the gold from your logo */
+    margin-bottom: 8px;
+    display: block;
+}
+
+.offer span { 
+    color: var(--white) !important; 
+    font-size: 0.85rem; 
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* Tablet/Mobile: Keep a bit of height so it's not too small */
+@media (max-width: 600px) {
+    .offer { height: 200px; }
+}
+
+        /* --- Three Steps (How it Works) --- */
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .step-card { text-align: center; padding: 40px; border: 1px solid #eee; transition: 0.3s; }
+        .step-card:hover { border-color: var(--accent); transform: translateY(-10px); }
+        .step-number { font-family: 'Playfair Display'; font-size: 3rem; color: #e0e0e0; margin-bottom: 10px; }
+
+        /* --- Section Styling --- */
+        section { padding: 100px 10%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-family: 'Playfair Display'; font-size: 2.8rem; margin-bottom: 10px; }
+        .section-title p { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-weight: 600; }
+
+
+/* --- Exclusive Amenities with Images --- */
+        .amenity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 5%; }
+        .amenity-card { position: relative; height: 300px; overflow: hidden; color: white; display: flex; align-items: flex-end; padding: 20px; }
+        .amenity-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: 0.5s; }
+        .amenity-card:hover img { transform: scale(1.1); }
+        .amenity-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 2; }
+        .amenity-content { z-index: 3; position: relative; }
+ .amenity-content i { color: var(--accent); margin-bottom: 15px; }
+
+        /* --- Luxury Map Embed --- */
+        .map-container { height: 450px; width: 100%; filter: grayscale(1) contrast(1.2) invert(0.9); }
+
+        /* --- Forms & Footer --- */
+        .booking-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: var(--light); padding: 30px 5%; border-radius: 8px; }
+        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; background: #fff; font-family: inherit; outline: none; transition: 0.3s; }
+        input:focus, select:focus { border-color: var(--accent); }
+        .btn-submit { background: var(--primary); color: white; border: none; padding: 18px; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; transition: 0.3s; }
+        .btn-submit:hover { background: var(--accent); }
+
+        .floating-contact { position: fixed; right: 25px; bottom: 100px; display: flex; flex-direction: column; gap: 15px; z-index: 1002; }
+        .floating-contact a { background: var(--primary); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none !important; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: 0.3s; }
+        .floating-contact a:hover { background: var(--accent); transform: scale(1.1); }
+
+        .book-now-bar { position: fixed; bottom: 0; width: 100%; background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 -5px 25px rgba(0,0,0,0.1); z-index: 1001; }
+        .bar-val { font-weight: 700; color: var(--primary); font-size: 1.2rem; }
+
+        footer { background: #0f1410; color: #888; padding: 40px 5% 100px; text-align: center; }
+        .social-icons { margin-bottom: 25px; display: flex; justify-content: center; gap: 30px; }
+        .social-icons a { color: var(--white); font-size: 1.4rem; transition: 0.3s; text-decoration: none !important; }
+        .social-icons a:hover { color: var(--accent); transform: translateY(-3px); }
+
+        @media (max-width: 992px) {
+            .grid-2, .amenity-grid, .booking-container { grid-template-columns: 1fr; gap: 40px; }
+            .stat-bar { flex-wrap: wrap; gap: 20px; }
+            .book-now-bar { padding: 10px 5%; }
+            .nav-links a:not(.btn-reserve) { display: none; }
+        }
+
+
+/* --- Stat Bar Styling & Animation --- */
+.stat-bar { 
+    background: var(--primary); 
+    color: white; 
+    padding: 60px 0; 
+    display: flex; 
+    justify-content: space-around; 
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 150px;
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+    display: inline-block;
+    /* This triggers the animation */
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+/* Staggering the animation so they don't move at the exact same time */
+.stat-item:nth-child(2) i { animation-delay: 0.5s; }
+.stat-item:nth-child(3) i { animation-delay: 1s; }
+.stat-item:nth-child(4) i { animation-delay: 1.5s; }
+
+.stat-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; /* Slightly larger for impact */
+    font-weight: 700;
+    color: var(--white);
+    margin: 5px 0;
+    min-width: 80px; /* Prevents layout shift while counting */
+    display: inline-block;
+}
+
+/* Optional: Add a '+' or '%' suffix via CSS if needed */
+.stat-item:nth-child(2) h3::after { content: '%'; font-size: 1.5rem; color: var(--accent); }
+.stat-item:nth-child(4) h3::before { content: 'K'; font-size: 1.5rem; color: var(--accent); margin-right: 2px; }
+
+.stat-item p { 
+    margin: 5px 0 0; 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    color: var(--accent); /* Gold text for the labels */
+}
+
+/* The Floating Keyframe */
+@keyframes floatIcon {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* --- Tightened Stat Bar --- */
+.stat-bar { 
+    background: var(--primary); 
+    color: white; 
+    padding: 30px 0; /* Reduced from 60px */
+    display: flex; 
+    justify-content: space-around; 
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white);
+    transition: filter 0.2s ease; /* Smooth entrance for the blur */
+    min-width: 90px;
+    display: inline-block;
+}
+
+/* The Odometer Blur Effect */
+.stat-item h3.counting {
+    filter: blur(2px);
+    opacity: 0.8;
+}
+
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="#" class="logo-container">
+            <img src="images/logo.jpg" alt="Logo" class="logo-img">
+            <div class="logo-text">KOKODA <span>FOOTSTEPS TREKKING</span></div>
+        </a>
+        <div class="nav-links">
+            <a href="#gallery" style="color: white; text-decoration: none; margin-right: 30px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">The Experience</a>
+            <a href="#booking" class="btn-reserve">Reserve Spot</a>
+        </div>
+    </nav>
+
+   <div class="swiper hero-slider">
+    <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+            <img src="images/trekking5.jpg" alt="The Trail">
+            <div class="hero-overlay">
+                <div class="hero-text">
+                    <p data-swiper-parallax="-300">EST. 1942</p>
+                    <h1 data-swiper-parallax="-100">The Pilgrimage.</h1>
+                    <span class="hero-quote" data-swiper-parallax="-500">"Where history breathes in every step."</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <img src="images/trekking1.jpg" alt="Jungle Canopy">
+            <div class="hero-overlay">
+                <div class="hero-text">
+                    <p data-swiper-parallax="-300">LIMITLESS ENDURANCE</p>
+                    <h1 data-swiper-parallax="-100">Beyond the Ridge.</h1>
+                    <span class="hero-quote" data-swiper-parallax="-500">"96 kilometers of grit, soul, and victory."</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <img src="images/trekking6.jpg" alt="Mountain Mist">
+            <div class="hero-overlay">
+                <div class="hero-text">
+                    <p data-swiper-parallax="-300">SACRED SILENCE</p>
+                    <h1 data-swiper-parallax="-100">Find Your Spirit.</h1>
+                    <span class="hero-quote" data-swiper-parallax="-500">"The journey isn't just the trail; it's the reset."</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <img src="images/trekking7.jpg" alt="Mountain Mist">
+            <div class="hero-overlay">
+                <div class="hero-text">
+                    <p data-swiper-parallax="-300">9 DAY TREKKING</p>
+                    <h1 data-swiper-parallax="-100">The Spirit of the Trail</h1>
+                    <span class="hero-quote" data-swiper-parallax="-500">"Premium Day Trekking"</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+
+<div class="stat-bar">
+    <div class="stat-item">
+        <i class="fa-solid fa-route"></i>
+        <h3 class="counter" data-target="96">0</h3>
+        <p>Kilometers</p>
+    </div>
+    <div class="stat-item">
+        <i class="fa-solid fa-handshake-angle"></i>
+        <h3 class="counter" data-target="100">0</h3>
+        <p>Local Impact %</p>
+    </div>
+    <div class="stat-item">
+        <i class="fa-solid fa-calendar-check"></i>
+        <h3 class="counter" data-target="9">0</h3>
+        <p>Day Journey</p>
+    </div>
+    <div class="stat-item">
+        <i class="fa-solid fa-tags"></i>
+        <h3 class="counter" data-target="100">0</h3>
+        <p>Starting Rate (K)</p>
+    </div>
+</div>
+
+<script>
+    const counters = document.querySelectorAll('.counter');
+    const duration = 2000; // Animation takes exactly 2 seconds
+
+    const startCounters = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = +counter.getAttribute('data-target');
+                let startTime = null;
+
+                // Add the blur class when starting
+                counter.classList.add('counting');
+
+                const step = (timestamp) => {
+                    if (!startTime) startTime = timestamp;
+                    const progress = Math.min((timestamp - startTime) / duration, 1);
+                    
+                    // Update the number
+                    counter.innerText = Math.floor(progress * target);
+
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        counter.innerText = target;
+                        // Remove blur class once finished
+                        counter.classList.remove('counting');
+                    }
+                };
+
+                window.requestAnimationFrame(step);
+                observer.unobserve(counter);
+            }
+        });
+    };
+
+    const counterObserver = new IntersectionObserver(startCounters, { threshold: 0.5 });
+    counters.forEach(counter => counterObserver.observe(counter));
+</script>
+
+
+
+
+    <section id="about">
+        <div class="grid-2">
+            <div class="text-block">
+                <div class="pill">Featured Destination</div>
+                <h2 style="font-family: 'Playfair Display'; font-size: 2.8rem; color: var(--primary);">Imita Ridge</h2>
+                <p style="line-height: 1.8; color: #555; font-size: 1.1rem;">Retrace history through the lush canopy of the Owers Corner gateway. Our curated day tours provide an intimate look at the rugged beauty of the Kokoda Track with professional logistical support.</p>
+                <div style="font-size: 2rem; color: var(--accent); margin-top: 30px; font-weight: 700;">K100 <small style="font-size: 0.9rem; font-weight: 400; color: #888;">per person</small></div>
+            </div>
+            <div class="image-reveal">
+                <img src="images/camp15.jpg" alt="Imita Ridge">
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" style="background: var(--light);">
+        <div style="text-align: center; margin-bottom: 50px;">
+
+            <p style="color: var(--accent); letter-spacing: 3px;">THE EXPERIENCE</p>
+            <h2 style="margin-top:10px; font-size: clamp(1.7rem, 3vw, 2.6rem);">A journey that looks as good as it feels</h2>
+            <p>Browse through the moments captured on the trail—from golden-hour summits to calm morning mist.</p>
+          </div>
+
+
+           <div class="offers">
+                <div class="offer">
+                    <img src="images/camp1.jpg" alt="The Archway">
+                    <div class="offer-content">
+                        <strong>The Archway</strong>
+                        <span>Where history begins and legends are honored.</span>
+                    </div>
+                </div>
+
+                <div class="offer">
+                    <img src="images/trekking1.jpg" alt="Ascent">
+                    <div class="offer-content">
+                        <strong>The First Ascent</strong>
+                        <span>Quiet your mind; let the trail speak.</span>
+                    </div>
+                </div>
+
+                <div class="offer">
+                    <img src="images/camp6.jpg" alt="Dense Jungle">
+                    <div class="offer-content">
+                        <strong>Dense Jungle</strong>
+                        <span>A sanctuary of green where time stands still.</span>
+                    </div>
+                </div>
+
+                <div class="offer">
+                    <img src="images/camp16.jpg" alt="Golden Hour">
+                    <div class="offer-content">
+                        <strong>Golden Hour</strong>
+                        <span>The mountains don't ask for much, just your best.</span>
+                    </div>
+                </div>
+
+                <div class="offer">
+                    <img src="images/camp42.jpg" alt="River Crossing">
+                    <div class="offer-content">
+                        <strong>River Crossing</strong>
+                        <span>For guests who want a little challenge and a lot of fun.</span>
+                    </div>
+                </div>
+
+                <div class="offer">
+                    <img src="images/camp28.jpg" alt="The Porters">
+                    <div class="offer-content">
+                        <strong>The Porters</strong>
+                        <span>Guided by the strength of the Fuzzy Wuzzy spirit.</span>
+                    </div>
+                </div>
+
+                <div class="offer">
+                    <img src="images/trekking4.avif" alt="Sunrise Mist">
+                    <div class="offer-content">
+                        <strong>Sunrise Mist</strong>
+                        <span>Awaken to a world untouched and absolute.</span>
+                    </div>
+                </div>
+
+                <div class="offer">
+                    <img src="images/camp43.jpg" alt="Steep Ridge">
+                    <div class="offer-content">
+                        <strong>Steep Ridge</strong>
+                        <span>The incline tests the body; the view heals the soul.</span>
+                    </div>
+                </div>
+                
+                <div class="offer">
+                    <img src="images/camp14.jpg" alt="Village Life">
+                    <div class="offer-content">
+                        <strong>Village Life</strong>
+                        <span>Authenticity found in the heart of the Koiari people.</span>
+                    </div>
+                </div>
+
+
+          <div class="offer">
+                    <img src="images/camp56.jpg" alt="Campfire">
+                    <div class="offer-content">
+                        <strong>Campfire</strong>
+                        <span>Shared stories under a canopy of southern stars.</span>
+                    </div>
+                </div>
+
+          <div class="offer">
+                    <img src="images/camp54.jpg" alt="Memorial Site">
+                    <div class="offer-content">
+                        <strong>Memorial Site</strong>
+                        <span>Every step is a tribute to those who stood before us.</span>
+                    </div>
+                </div>
+
+          <div class="offer">
+                    <img src="images/trekking3.jpg" alt="Rainforest Path">
+                    <div class="offer-content">
+                        <strong>Rainforest Path</strong>
+                        <span>“Luxury is found in the absence of noise.”</span>
+                    </div>
+                </div>
+
+
+                <div class="offer">
+                    <img src="images/camp58.jpeg" alt="The Summit">
+                    <div class="offer-content">
+                        <strong>The Summit</strong>
+                        <span>Above the clouds, where perspective is found.</span>
+                    </div>
+                </div>
+
+
+          <div class="offer">
+                    <img src="images/camp59.jpg" alt="Tactical Briefing">
+                    <div class="offer-content">
+                        <strong>Tactical Briefing</strong>
+                        <span>Knowledge is the weightless gear we carry.</span>
+                    </div>
+                </div>
+
+          <div class="offer">
+                    <img src="images/camp19.jpg" alt="Muddy Boots">
+                    <div class="offer-content">
+                        <strong>Muddy Boots</strong>
+                        <span>The honest badge of a true Kokoda trekker.</span>
+                    </div>
+                </div>
+
+          <div class="offer">
+                    <img src="images/camp44.jpg" alt="Waterfall">
+                    <div class="offer-content">
+                        <strong>Waterfall</strong>
+                        <span>A natural reset in the heart of the Owen Stanley Range.</span>
+                    </div>
+                </div>
+
+
+   <div class="offer">
+                    <img src="images/camp48.jpg" alt="Mateship">
+                    <div class="offer-content">
+                        <strong>Mateship</strong>
+                        <span>Forged in sweat, bonded by the trail.</span>
+                    </div>
+                </div>
+
+
+          <div class="offer">
+                    <img src="images/camp59.jpg" alt="The Cabin">
+                    <div class="offer-content">
+                        <strong>The Cabin</strong>
+                        <span>Knowledge is the weightless gear we carry.</span>
+                    </div>
+                </div>
+
+          <div class="offer">
+                    <img src="images/camp19.jpg" alt="Muddy Boots">
+                    <div class="offer-content">
+                        <strong>Muddy Boots</strong>
+                        <span>The honest badge of a true Kokoda trekker.</span>
+                    </div>
+                </div>
+
+          <div class="offer">
+                    <img src="images/camp44.jpg" alt="Waterfall">
+                    <div class="offer-content">
+                        <strong>Waterfall</strong>
+                        <span>A natural reset in the heart of the Owen Stanley Range.</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* --- Refined Offers Grid --- */
+        #offers { padding: 100px 5%; background: #fafafa; }
+        .wrap { max-width: 1400px; margin: 0 auto; }
+        
+        .offers {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .offer {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 18px;
+            overflow: hidden;
+            transform: translateZ(0);
+            will-change: transform;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .offer img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            background: #f0f0f0; /* Loader fallback */
+            transition: transform 0.35s ease;
+            will-change: transform;
+        }
+
+        .offer:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent); /* Uses your gold brand color */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .offer:hover img {
+            transform: scale(1.04);
+        }
+
+        .offer-content { padding-bottom: 20px; }
+        .offer strong { 
+            display: block; 
+            padding: 16px 18px 0; 
+            font-size: 1.1rem; 
+            font-family: 'Playfair Display', serif;
+        }
+        .offer span { 
+            display: block; 
+            padding: 8px 18px 14px; 
+            color: #666; 
+            font-size: 0.9rem; 
+            line-height: 1.5;
+        }
+
+        /* Responsive Grid Adjustments */
+        @media (max-width: 1100px) {
+            .offers { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 800px) {
+            .offers { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 500px) {
+            .offers { grid-template-columns: 1fr; }
+        }
+    </style>
+<section style="padding: 100px 0;">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <p style="color: var(--accent); letter-spacing: 3px;">EXCLUSIVITY</p>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">What We Offer</h2>
+        </div>
+        <div class="amenity-grid">
+            <div class="amenity-card">
+                <img src="images/camp26.jpg" alt="Guides">
+                <div class="amenity-content"><i class="fa fa-person-hiking fa-2x"></i><h3>Expert Historians</h3><p>Deep insight into every ridge.</p></div>
+            </div>
+            <div class="amenity-card">
+                <img src="images/camp10.jpg" alt="Camps">
+                <div class="amenity-content"><i class="fa fa-campground fa-2x"></i><h3>Premium Camps</h3><p>Rest in nature's luxury.</p></div>
+            </div>
+            <div class="amenity-card">
+                <img src="images/camp38.jpg" alt="Transport">
+                <div class="amenity-content"><i class="fa fa-car fa-2x"></i><h3>Secure Transport</h3><p>Effortless pick-up and drop-off.</p></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section style="background: var(--light);">
+        <div class="section-title">
+            <p>Effortless Logistics</p>
+            <h2>Your Journey in Three Movements</h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h3>Curated Selection</h3>
+                <p>Choose a bespoke tour date that fits your pace and seasonal preference.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h3>Expert Integration</h3>
+                <p>A seamless consultation process to handle permits, flights, and porter logistics.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h3>Total Immersion</h3>
+                <p>Arrival and deployment. You provide the footsteps; we provide the legendary support.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="section-title" style="margin-top: 80px;"  id="map"><h2>Where You'll Be</h2></div>
+    <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15858.97652399653!2d147.4124318!3d-9.3082218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6917649994947d49%3A0x82bc4ecda4fbb4ab!2sOwers&#39;%20Corner!5e0!3m2!1sen!2spg!4v1690000000000" allowfullscreen="" loading="lazy"></iframe>
+
+
+
+    <section style="background: var(--light);">
+        <div class="booking-container" id="booking">
+            <div>
+                <p style="color: var(--accent); letter-spacing: 2px;">RESERVATIONS</p>
+                <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; margin-bottom: 20px;">Secure Your Spot</h2>
+                <p style="line-height: 1.6;">Limited to small groups to ensure a high-end, intimate experience. Reach out to verify availability for your preferred dates.</p>
+                <div style="margin-top: 30px;">
+                    <p><strong>Email:</strong> kokodafootsteps@gmail.com</p>
+                    <p><strong>Location:</strong> Owers Corner, PNG</p>
+                </div>
+            </div>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <select>
+                    <option>Imita Ridge Day Tour</option>
+                    <option>Goldie River Expedition</option>
+                    <option>9-Day Full Track</option>
+                </select>
+                <textarea rows="4" placeholder="Special Requirements / Group Size"></textarea>
+                <button class="btn-submit">Request Invitation</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="floating-contact">
+        <a href="https://wa.me/67572241835"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+67576135708"><i class="fas fa-phone"></i></a>
+    </div>
+
+    <div class="book-now-bar">
+        <div class="bar-info" style="display: flex; gap: 30px;">
+            <div><small style="color: #888; letter-spacing: 1px;">STARTING FROM</small><div class="bar-val">K100.00</div></div>
+            <div class="hide-mobile"><small style="color: #888; letter-spacing: 1px;">DURATION</small><div class="bar-val">Full Day</div></div>
+        </div>
+        <a href="#booking" class="btn-reserve" style="border-radius: 4px;">Book Now</a>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/kokoda.footstepstrekking" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+    
+        </div>
+        <p>© 2026 Kokoda Footsteps Trekking. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Initialize Swiper
+        const swiper = new Swiper('.hero-slider', {
+            loop: true,
+            speed: 1200,
+            parallax: true,
+            autoplay: { delay: 5000 },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            effect: 'fade',
+            fadeEffect: { crossFade: true }
+        });
+
+    </script>
+
+
+
+<script>
+    // Navbar scroll listener
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('nav-scrolled');
+        } else {
+            nav.classList.remove('nav-scrolled');
+        }
+    });
+
+    // Swiper initialization (Keep your existing swiper code here)
+    const swiper = new Swiper('.hero-slider', {
+        loop: true,
+        speed: 1500,
+        parallax: true,
+        autoplay: { delay: 6000 },
+        effect: 'fade',
+        pagination: { el: '.swiper-pagination', clickable: true },
+    });
+</script>
+
+
+</body>
+</html>
