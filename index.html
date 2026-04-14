@@ -240,7 +240,7 @@ nav {
         .book-now-bar { position: fixed; bottom: 0; width: 100%; background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 -5px 25px rgba(0,0,0,0.1); z-index: 1001; }
         .bar-val { font-weight: 700; color: var(--primary); font-size: 1.2rem; }
 
-        footer { background: #0f1410; color: #888; padding: 40px 5% 100px; text-align: center; }
+        footer { background: #0f1410; color: #888; padding: 80px 1% 50px; text-align: center; }
         .social-icons { margin-bottom: 25px; display: flex; justify-content: center; gap: 30px; }
         .social-icons a { color: var(--white); font-size: 1.4rem; transition: 0.3s; text-decoration: none !important; }
         .social-icons a:hover { color: var(--accent); transform: translateY(-3px); }
@@ -499,7 +499,11 @@ nav {
         </a>
         <div class="nav-links">
             <a href="#gallery" style="color: white; text-decoration: none; margin-right: 30px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">The Experience</a>
-            <a href="#booking" class="btn-reserve">Reserve Spot</a>
+           
+<a href="https://wa.me/67572241835" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Business
+                    </a>
+ <a href="#booking" class="btn-reserve">Reserve Spot</a>
         </div>
     </nav>
 
@@ -1160,30 +1164,52 @@ nav {
 
 
 
-    <section style="background: var(--light);">
-        <div class="booking-container" id="booking">
-            <div>
-                <p style="color: var(--accent); letter-spacing: 2px;">RESERVATIONS</p>
-                <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; margin-bottom: 20px;">Secure Your Spot</h2>
-                <p style="line-height: 1.6;">Limited to small groups to ensure a high-end, intimate experience. Reach out to verify availability for your preferred dates.</p>
-                <div style="margin-top: 30px;">
-                    <p><strong>Email:</strong> kokodafootsteps@gmail.com</p>
-                    <p><strong>Location:</strong> Owers Corner, PNG</p>
-                </div>
+ <section style="background: #ffffff; color: #222; padding: 100px 5%;" id="booking">
+    <div class="booking-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; max-width: 1200px; margin: 0 auto;">
+        
+        <div class="contact-info">
+            <p style="color: #c5a059; letter-spacing: 2px; font-weight: bold; margin-bottom: 10px;">RESERVATIONS</p>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.8rem; margin-bottom: 25px; line-height: 1.2; color: #1a1a1a;">Secure Your Spot</h2>
+            <p style="line-height: 1.8; color: #444; margin-bottom: 30px;">
+                Our tours are strictly limited to small groups to ensure a high-end, intimate experience. Reach out to verify availability for your preferred dates.
+            </p>
+            
+            <div style="background: #f9f6f0; padding: 30px; border-left: 4px solid #c5a059; border-radius: 0 10px 10px 0;">
+                <p style="margin-bottom: 15px; color: #1a1a1a;"><strong><i class="fas fa-map-marker-alt" style="color: #c5a059; margin-right: 10px;"></i> Address:</strong><br>
+                <span style="padding-left: 25px; display: block; font-size: 0.95rem; color: #555;">
+                    P.O. Box 3102, Boroko NCD<br>
+                    Port Moresby, Papua New Guinea
+                </span></p>
+                
+                <p style="margin-bottom: 15px; color: #1a1a1a;"><strong><i class="fas fa-phone" style="color: #c5a059; margin-right: 10px;"></i> Call Us:</strong><br>
+                <span style="padding-left: 25px; display: block; font-size: 0.95rem; color: #555;">+675 7613 5708 | +675 7224 1835</span></p>
+                
+<a href="https://wa.me/67572241835" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Business
+                    </a>
+
+
+                <p style="margin-bottom: 0; color: #1a1a1a;"><strong><i class="fas fa-envelope" style="color: #c5a059; margin-right: 10px;"></i> Email:</strong><br>
+                <span style="padding-left: 25px; display: block; font-size: 0.95rem; color: #555;">kokodafootsteps@gmail.com</span></p>
             </div>
-            <form>
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <select>
+        </div>
+
+        <div class="booking-form-wrapper" style="background: #f4f4f4; padding: 40px; border-radius: 15px; border: 1px solid #ddd;">
+            <form style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" placeholder="Full Name" required style="background: #fff; border: 1px solid #ccc; color: #333; padding: 12px; border-radius: 5px;">
+                <input type="email" placeholder="Email Address" required style="background: #fff; border: 1px solid #ccc; color: #333; padding: 12px; border-radius: 5px;">
+                <select style="background: #fff; border: 1px solid #ccc; color: #333; padding: 12px; border-radius: 5px;">
                     <option>Imita Ridge Day Tour</option>
                     <option>Goldie River Expedition</option>
                     <option>9-Day Full Track</option>
                 </select>
-                <textarea rows="4" placeholder="Special Requirements / Group Size"></textarea>
-                <button class="btn-submit">Request Invitation</button>
+                <textarea rows="4" placeholder="Special Requirements / Group Size" style="background: #fff; border: 1px solid #ccc; color: #333; padding: 12px; border-radius: 5px;"></textarea>
+                <button class="btn-submit" style="background: #c5a059; color: #fff; padding: 15px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase;">Request Invitation</button>
             </form>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <div class="floating-contact">
         <a href="https://wa.me/67572241835"><i class="fab fa-whatsapp"></i></a>
@@ -1198,14 +1224,7 @@ nav {
         <a href="#booking" class="btn-reserve" style="border-radius: 4px;">Book Now</a>
     </div>
 
-    <footer>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/kokoda.footstepstrekking" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-    
-        </div>
-        <p>© 2026 Kokoda Footsteps Trekking. All Rights Reserved.</p>
-    </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
@@ -1292,6 +1311,23 @@ var testimonialSwiper = new Swiper(".testimonialSwiper", {
         }
     };
 </script>
+
+
+<footer style="background: #1a1a1a; color: #ffffff; padding: 75px 5%; text-align: center;">
+    <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 35px; font-size: 1.4rem;">
+        <a href="#" style="color: #fff;"><i class="fab fa-facebook"></i></a>
+        <a href="#" style="color: #fff;"><i class="fab fa-instagram"></i></a>
+        <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
+        <a href="#" style="color: #fff;"><i class="fab fa-tiktok"></i></a>
+        <a href="#" style="color: #fff;"><i class="fab fa-telegram"></i></a>
+        <a href="https://wa.me/67572241835" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <p style="font-size: 0.85rem; color: #999; letter-spacing: 1px; text-transform: uppercase;">
+        &copy; 2026 Kokoda Footsteps Trekking Tours. All Rights Reserved.
+    </p>
+</footer>
+
 
 </body>
 </html>
