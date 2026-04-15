@@ -223,6 +223,39 @@ nav {
         .amenity-content { z-index: 3; position: relative; }
  .amenity-content i { color: var(--accent); margin-bottom: 15px; }
 
+
+.amenity-fader {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.amenity-fader img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: crossFade 12s infinite;
+}
+
+/* Timing for smooth rotation */
+.amenity-fader img:nth-child(1) { animation-delay: 0s; }
+.amenity-fader img:nth-child(2) { animation-delay: 4s; }
+.amenity-fader img:nth-child(3) { animation-delay: 8s; }
+
+@keyframes crossFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+
+
         /* --- Luxury Map Embed --- */
         .map-container { height: 450px; width: 100%; filter: grayscale(1) contrast(1.2) invert(0.9); }
 
@@ -487,6 +520,28 @@ nav {
             letter-spacing: 2px; border-radius: 50px; margin-bottom: 15px;
 
 }
+
+
+
+/* --- Footer Social Hover Effects --- */
+.footer-socials a {
+    display: inline-block;
+    transition: all 0.3s ease; /* Makes the movement smooth */
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    color: #c5a059 !important; /* Turns gold on hover */
+    transform: translateY(-5px); /* Lifts the icon up */
+    filter: drop-shadow(0 5px 15px rgba(197, 160, 89, 0.4));
+}
+
+footer {
+    position: relative;
+    z-index: 10; /* Ensures it sits above other background elements */
+}
+
 
     </style>
 </head>
@@ -1117,18 +1172,36 @@ nav {
             <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">What We Offer</h2>
         </div>
         <div class="amenity-grid">
-            <div class="amenity-card">
-                <img src="images/camp26.jpg" alt="Guides">
-                <div class="amenity-content"><i class="fa fa-person-hiking fa-2x"></i><h3>Expert Historians</h3><p>Deep insight into every ridge.</p></div>
-            </div>
-            <div class="amenity-card">
-                <img src="images/camp10.jpg" alt="Camps">
-                <div class="amenity-content"><i class="fa fa-campground fa-2x"></i><h3>Sanctuary Camps</h3><p>Recharge in the embrace of nature.</p></div>
-            </div>
-            <div class="amenity-card">
-                <img src="images/camp38.jpg" alt="Transport">
-                <div class="amenity-content"><i class="fa fa-car fa-2x"></i><h3>Secure Transport</h3><p>Effortless pick-up and drop-off.</p></div>
-            </div>
+
+<div class="amenity-card">
+    <div class="amenity-fader">
+           <img src="images2/img2.jpg" alt="Guides1">
+          <img src="images2/img6.jpg" alt="Guides2">
+         <img src="images2/img4.jpg" alt="Guides3">
+    </div>
+ <div class="amenity-content"><i class="fa fa-person-hiking fa-2x"></i><h3>Expert Historians</h3><p>Deep insight into every ridge.</p></div>
+</div>
+
+
+<div class="amenity-card">
+    <div class="amenity-fader">
+          <img src="images/camp65.webp" alt="Camps1">
+         <img src="images/camp63.jpg" alt="Camps2">
+          <img src="images/camp10.jpg" alt="Camps3">
+    </div>
+  <div class="amenity-content"><i class="fa fa-campground fa-2x"></i><h3>Sanctuary Camps</h3><p>Recharge in the embrace of nature.</p></div>
+</div>
+
+<div class="amenity-card">
+    <div class="amenity-fader">
+        <img src="images/camp41.jpg" alt="Transport View 1">
+        <img src="images/camp29.jpg" alt="Transport View 2">
+        <img src="images/camp38.jpg" alt="Transport View 3">
+    </div>
+    <div class="amenity-content">        <i class="fa fa-car fa-2x"></i>        <h3>Secure Transport</h3>        <p>Effortless pick-up and drop-off.</p>    </div>
+</div>
+
+
         </div>
     </section>
 
@@ -1313,16 +1386,16 @@ var testimonialSwiper = new Swiper(".testimonialSwiper", {
 </script>
 
 
-<footer style="background: #1a1a1a; color: #ffffff; padding: 75px 5%; text-align: center;">
-    <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 35px; font-size: 1.4rem;">
-        <a href="#" style="color: #fff;"><i class="fab fa-facebook"></i></a>
-        <a href="#" style="color: #fff;"><i class="fab fa-instagram"></i></a>
-        <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
-        <a href="#" style="color: #fff;"><i class="fab fa-tiktok"></i></a>
-        <a href="#" style="color: #fff;"><i class="fab fa-telegram"></i></a>
-        <a href="https://wa.me/67572241835" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+<footer style="background: #000; color: #fff; padding: 75px 5%; text-align: center;">
+    <div class="footer-socials" style="margin-bottom: 25px; font-size: 1.4rem; display: flex; justify-content: center; gap: 25px;">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+        <a href="https://wa.me/67572241835" style="color: #25D366 !important;"><i class="fab fa-whatsapp"></i></a>
     </div>
-
+    
     <p style="font-size: 0.85rem; color: #999; letter-spacing: 1px; text-transform: uppercase;">
         &copy; 2026 Kokoda Footsteps Trekking Tours. All Rights Reserved.
     </p>
