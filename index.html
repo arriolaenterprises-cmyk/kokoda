@@ -141,6 +141,8 @@ nav {
     /* Instructs browser to only render cards when near viewport */
     content-visibility: auto;
     contain-intrinsic-size: 1000px; 
+    padding: 10px;
+
 }
 
 .offer img {
@@ -173,7 +175,7 @@ nav {
 
 /* Text Section (Replacing the white space) */
 .offer-content { 
-    padding: 20px;
+    padding: 10px;
     background: #1a1a1a; /* Matches card body */
     flex-grow: 1;
     display: flex;
@@ -208,20 +210,20 @@ nav {
         .step-number { font-family: 'Playfair Display'; font-size: 3rem; color: #e0e0e0; margin-bottom: 10px; }
 
         /* --- Section Styling --- */
-        section { padding: 100px 10%; }
+        section { padding: 50px 10%; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-family: 'Playfair Display'; font-size: 2.8rem; margin-bottom: 10px; }
         .section-title p { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-weight: 600; }
 
 
 /* --- Exclusive Amenities with Images --- */
-        .amenity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 5%; }
+        .amenity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 10px 5%; }
         .amenity-card { position: relative; height: 300px; overflow: hidden; color: white; display: flex; align-items: flex-end; padding: 20px; }
         .amenity-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: 0.5s; }
         .amenity-card:hover img { transform: scale(1.1); }
         .amenity-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 2; }
         .amenity-content { z-index: 3; position: relative; }
- .amenity-content i { color: var(--accent); margin-bottom: 15px; }
+        .amenity-content i { color: var(--accent); margin-bottom: 15px; }
 
 
 .amenity-fader {
@@ -433,7 +435,7 @@ nav {
 
 
 /* --- Uniform Testimonial Images --- */
-.testimonials { background: #; padding: 80px 5%; }
+.testimonials { background: #; padding: 50px 5%; }
 
 /* --- Strict Uniform Testimonial Images --- */
 .testimonial-slide {
@@ -599,6 +601,323 @@ footer {
 }
 
 
+
+
+
+/* ============================================ */
+/*                 GENERAL STYLES               */
+/* ============================================ */
+:root {
+  --primary-color: #2c5f2d; /* Deep Green */
+  --secondary-color: #97bc62; /* Light Green */
+  --dark-color: #1e1e1e;
+  --light-color: #f8f9fa;
+  --text-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* To reduce space, decrease these values */
+.page-section {
+  margin-top: 10px;
+  margin-bottom:10px;
+  /* ... other styles ... */
+}
+
+.bg-light {
+  background-color: var(--light-color);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+/* ============================================ */
+/*               ITINERARY STYLES               */
+/* ============================================ */
+.itinerary-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.itinerary-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--secondary-color);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-day {
+  width: 100px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  line-height: 40px;
+  background: white;
+  border: 3px solid var(--secondary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 30px;
+  z-index: 2;
+}
+
+.timeline-content {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+  color: var(--dark-color);
+  margin-bottom: 8px;
+}
+
+/* --- Styles for the WHAT TO PACK section --- */
+/* --- High-End Packing Grid (4 Columns) --- */
+.packing-grid {
+    display: grid;
+    /* Forces 4 columns on large screens */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.pack-card {
+    background: #fff;
+    padding: 35px 25px;
+    border-radius: 4px; /* Matches your image-reveal border-radius */
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.pack-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.pack-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.pack-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pack-card li {
+    font-size: 0.85rem;
+    color: #555;
+    padding: 8px 0;
+    border-bottom: 1px solid #f9f9f9;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.pack-card li:before {
+    content: "\f00c"; /* FontAwesome Check */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--accent);
+    margin-right: 12px;
+    font-size: 0.7rem;
+}
+
+/* --- Responsive Layouts --- */
+
+/* Tablet: 2 Columns */
+@media (max-width: 1024px) {
+    .packing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 Column */
+@media (max-width: 650px) {
+    .packing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Styles for the section titles (if you want them consistent across sections) --- */
+/* Make sure these are in your main CSS file or a dedicated section CSS file */
+.page-section p[style*="color: var(--accent)"] { /* Targeting the paragraph with specific styles */
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase; /* Often used for such labels */
+  font-weight: bold; /* Make it stand out */
+}
+
+.page-section h2[style*="font-size: clamp"] { /* Targeting the h2 with specific styles */
+  margin-top: 5px;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.2; /* Better line spacing for headings */
+}
+
+/* You might want to remove the inline styles from HTML and use these classes instead */
+/* Example:
+<p class="section-label">WHAT TO PACK</p>
+<h2 class="section-heading">Essential Gear</h2>
+*/
+/* Then define .section-label and .section-heading in your CSS */
+
+
+/* ============================================ */
+/*               FAQ STYLES                     */
+/* ============================================ */
+/* Basic styling for FAQ section */
+
+
+.section-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  border: none;
+  text-align: left;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex; /* To align text and icon */
+  justify-content: space-between; /* Pushes icon to the right */
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #f0f0f0;
+}
+
+.faq-icon {
+  font-size: 1.3em;
+  margin-left: 10px; /* Space between text and icon */
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  padding: 20px;
+  color: #555;
+  font-size: 1em;
+  line-height: 1.6;
+  display: none; /* Hidden by default */
+  overflow: hidden; /* For smooth transitions if you add them */
+  max-height: 0; /* For smooth transitions if you add them */
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth transition */
+}
+
+.faq-answer p {
+  margin: 0; /* Remove default paragraph margin inside */
+}
+
+/* Styles for when the FAQ is open */
+.faq-question.active {
+  background-color: #e9e9e9; /* Slightly darker when active */
+}
+
+.faq-answer.open {
+  display: block; /* Show the answer */
+  max-height: 500px; /* Adjust as needed, or use a large enough value */
+  padding: 20px; /* Restore padding */
+}
+
+/* Optional: Animate the icon rotation */
+.faq-question.active .faq-icon {
+  transform: rotate(45deg); /* Example: rotate the plus to a cross */
+}
+
+/* ============================================ */
+/*               MOBILE RESPONSIVE              */
+/* ============================================ */
+@media(max-width: 768px){
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .itinerary-timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-day {
+    margin-right: 15px;
+  }
+}
+
+
     </style>
 </head>
 <body>
@@ -609,10 +928,12 @@ footer {
             <div class="logo-text">KOKODA <span>FOOTSTEPS TREKKING</span></div>
         </a>
         <div class="nav-links">
-            <a href="#gallery" style="color: white; text-decoration: none; margin-right: 30px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">The Experience</a>
-           
+            <a href="#gallery" style="color: white; text-decoration: none; margin-right: 1px; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px;">The Experience</a>
+       <a href="#itinerary" style="color: white; text-decoration: none; margin-right: 1px; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px;">Itinerary</a>    
+    <a href="#pack" style="color: white; text-decoration: none; margin-right: 1px; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px;">What to Pack</a>    
+ <a href="#faq" style="color: white; text-decoration: none; margin-right: 1px; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px;">FAQ</a>  
 <a href="https://wa.me/67572241835" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">
-                        <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Business
+                        <i class="fab fa-whatsapp" style="margin-right: 1px;"></i> WhatsApp Business
                     </a>
  <a href="#booking" class="btn-reserve">Reserve Spot</a>
         </div>
@@ -750,13 +1071,17 @@ footer {
         </div>
     </section>
 
+<section style="background: var(--light);">
 
 
-<section class="reels-section" style=padding: 60px 5%;">
-    <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-        <span class="pill">Follow the Trail</span>
-        <h2 style="color: white; font-family: 'Playfair Display'; font-size: 2.5rem;">Kokoda Footsteps | Trekking the Kokoda Trail </h2>
-    </div>
+ <div style="text-align: center; margin-bottom: 50px;">
+
+            <p style="color: var(--accent); letter-spacing: 3px;">Follow the Trail</p>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Kokoda Footsteps | Trekking the Kokoda Trail </h2>
+
+          </div>
+
+
     
     <div class="reels-grid">
 
@@ -791,11 +1116,11 @@ footer {
 </section>
 
 
-    <section id="gallery" style="background: var(--light);">
+    <section id="gallery" >
         <div style="text-align: center; margin-bottom: 50px;">
 
             <p style="color: var(--accent); letter-spacing: 3px;">THE EXPERIENCE</p>
-            <h2 style="margin-top:10px; font-size: clamp(1.7rem, 3vw, 2.6rem);">A journey that looks as good as it feels</h2>
+             <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">A journey that looks as good as it feels</h2>
             <p>Browse through the candid moments of triumph at the gold arches and village hospitality captured on the trail—from golden-hour summits to calm morning mist.</p>
           </div>
 
@@ -1111,13 +1436,12 @@ footer {
 
 
 
-<section class="testimonials">
-
+<section class="testimonials" style="background: var(--light);">
 
  <div style="text-align: center; margin-bottom: 50px;">
 
             <p style="color: var(--accent); letter-spacing: 3px;">TESTIMONIALS</p>
-            <h2 style="margin-top:10px; font-size: clamp(1.7rem, 3vw, 2.6rem);">They had the best experience of their life!</h2>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">They had the best experience of their life!</h2>
             <p>Life-changing nature of the trek and the "guardian" role of the porters</p>
           </div>
 
@@ -1222,13 +1546,12 @@ footer {
 </section>
 
 
-<section style="padding: 100px 0;">
+<section>
         <div style="text-align: center; margin-bottom: 50px;">
             <p style="color: var(--accent); letter-spacing: 3px;">EXCLUSIVITY</p>
             <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">What We Offer</h2>
         </div>
         <div class="amenity-grid">
-
 <div class="amenity-card">
     <div class="amenity-fader">
            <img src="images2/img2.jpg" alt="Guides1">
@@ -1262,10 +1585,10 @@ footer {
     </section>
 
 
-    <section style="background: var(--light);">
-        <div class="section-title">
-            <p>Effortless Logistics</p>
-            <h2>Your Journey in Three Movements</h2>
+    <section >
+        <div style="text-align: center; margin-bottom: 50px;">
+            <p style="color: var(--accent); letter-spacing: 3px;">EFFORTLESS LOGISTICS</p>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Your Journey in Three Movements</h2>
         </div>
         <div class="steps-grid">
             <div class="step-card">
@@ -1288,12 +1611,242 @@ footer {
 
 
 
-    <div class="section-title" style="margin-top: 80px;"  id="map"><h2>Where You'll Be</h2></div>
+    <section id="map" style="background: var(--light);">
+ <div style="text-align: center; margin-bottom: 50px;">  <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Where You'll Be</h2></div>
     <iframe  class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15858.97652399653!2d147.4124318!3d-9.3082218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6917649994947d49%3A0x82bc4ecda4fbb4ab!2sOwers&#39;%20Corner!5e0!3m2!1sen!2spg!4v1690000000000" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+
+<!-- ============================================ -->
+<!--               ITINERARY SECTION              -->
+<!-- ============================================ -->
+
+<section id="itinerary" >    <div style="text-align: center; margin-bottom: 50px;">
+            <p style="color: var(--accent); letter-spacing: 3px;">9-Day KOKODA TRACK ITINERARY</p>
+      <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Journey through history, nature, and endurance.</h2>
+      </div>
+    <div class="itinerary-timeline">
+      <!-- Day 1 -->
+      <div class="timeline-item">
+        <div class="timeline-day">Day 01</div>
+        <div class="timeline-content">
+          <h3>Arrival & Briefing</h3>
+          <p>Airport transfer and hotel check-in. Welcome dinner, tactical briefing, and meeting your guides and porters.</p>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="timeline-item">
+        <div class="timeline-day">Day 02</div>
+        <div class="timeline-content">
+          <h3>Owers Corner to Uaile Creek</h3>
+          <p>Walk through the Gold Archway. First descent into the jungle and introduction to the trail rhythm. <strong>Distance: ~6km</strong></p>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="timeline-item">
+        <div class="timeline-day">Day 03</div>
+        <div class="timeline-content">
+          <h3>Uaile Creek to Isurava</h3>
+          <p>Climb to Imita Ridge and visit the Isurava Memorial. A day of deep historical significance. <strong>Distance: ~8km</strong></p>
+        </div>
+      </div>
+      
+      <!-- Add more days here following the same structure -->
+      <div class="timeline-item">
+        <div class="timeline-day">Day 04</div>
+        <div class="timeline-content">
+          <h3>Alola to Misima</h3>
+          <p>Steep ascents and descents through valleys. Experience the silence and beauty of the rainforest. <strong>Distance: ~10km</strong></p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-day">Day 05</div>
+        <div class="timeline-content">
+          <h3>Via Eora Creek</h3>
+          <p>Tough walking along razorback ridges. Cross rushing rivers and see stunning waterfalls. <strong>Distance: ~12km</strong></p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-day">Day 06</div>
+        <div class="timeline-content">
+          <h3>Myola & The Gap</h3>
+          <p>Reach Myola Lake. A flatter walking day to recover your legs and enjoy the views. <strong>Distance: ~9km</strong></p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-day">Day 07</div>
+        <div class="timeline-content">
+          <h3>Templeton's Crossing</h3>
+          <p>Walk through dense jungle and learn about the military strategy of the campaign. <strong>Distance: ~11km</strong></p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-day">Day 08</div>
+        <div class="timeline-content">
+          <h3>Brigade Hill</h3>
+          <p>Visit the Brigade Hill Memorial. Terrain becomes slightly easier as you approach the finish. <strong>Distance: ~10km</strong></p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-day">Day 09</div>
+        <div class="timeline-content">
+          <h3>Arrival at Kokoda Village</h3>
+          <p>The final stretch! Flag raising ceremony and celebration. Transfer back to Port Moresby. <strong>Distance: ~8km</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--               WHAT TO PACK                   -->
+<!-- ============================================ -->
+
+<!-- WHAT TO PACK Section -->
+
+<section id="pack"  style="background: var(--light);">
+    <div style="text-align: center; margin-bottom: 50px;">
+            <p style="color: var(--accent); letter-spacing: 3px;">WHAT TO PACK</p>
+   <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Essential gear checklist for a comfortable journey.</h2>
+
+    <div class="packing-grid">
+      <!-- Category 1 -->
+      <div class="pack-card">
+        <div class="card-icon">👟</div>
+        <h3>Footwear & Clothing</h3>
+        <ul>
+          <li>Waterproof hiking boots (broken in)</li>
+          <li>6-8 pairs of thick wool socks</li>
+          <li>Quick-dry t-shirts & shorts</li>
+          <li>Long trekking pants</li>
+          <li>Fleece jumper & thermals (cold nights)</li>
+          <li>Heavy-duty waterproof jacket</li>
+        </ul>
+      </div>
+
+      <!-- Category 2 -->
+      <div class="pack-card">
+        <div class="card-icon">🎒</div>
+        <h3>Equipment</h3>
+        <ul>
+          <li>30-40L Backpack + rain cover</li>
+          <li>Trekking poles (highly recommended)</li>
+          <li>Head torch + extra batteries</li>
+          <li>2L Water bottle or hydration bladder</li>
+          <li>Microfiber towel</li>
+        </ul>
+      </div>
+
+      <!-- Category 3 -->
+      <div class="pack-card">
+        <div class="card-icon">🧴</div>
+        <h3>Health & Toiletries</h3>
+        <ul>
+          <li>Insect repellent (DEET based)</li>
+          <li>High SPF Sunscreen & Lip balm</li>
+          <li>Personal medications & painkillers</li>
+          <li>Blister pads & First Aid kit</li>
+          <li>Toilet paper & wet wipes</li>
+          <li>Hand sanitizer</li>
+        </ul>
+      </div>
+
+      <!-- Category 4 -->
+      <div class="pack-card">
+        <div class="card-icon">📄</div>
+        <h3>Documents</h3>
+        <ul>
+          <li>Passport / ID</li>
+          <li>Travel Insurance documents</li>
+          <li>Cash (Kina or USD)</li>
+          <li>Camera / Phone & charger</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+<section id="faq" >
+    <div style="text-align: center; margin-bottom: 50px;">
+            <p style="color: var(--accent); letter-spacing: 3px;">FREQUENTLY ASKED QUESTIONS</p>
+    <!-- Modified Heading -->
+   <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Your Questions Answered</h2>
+    </div>
+    <div class="faq-container">
+      <!-- Item 1 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          How difficult is the Kokoda Track?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>The track is physically challenging. It involves 96km of steep terrain, hot humidity, and muddy conditions. A good level of fitness and training is required to enjoy the experience fully.</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          What is the best time of year to trek?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>The dry season (May to October) is ideal. The trails are firmer, weather is cooler, and there are fewer leeches. However, the track is beautiful year-round.</p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          How much weight will the porter carry?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Porters carry up to 10kg-12kg of your personal gear. You will carry your own day pack (water, camera, raincoat) which is usually around 3kg-5kg.</p>
+        </div>
+      </div>
+      
+      <!-- Item 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Are there toilets and showers?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Facilities are basic and natural. Toilets are long-drops or bush facilities. Showers are cold mountain water from streams. It is part of the authentic adventure experience!</p>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Is it safe to trek?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, safety is our priority. Our guides are trained in first aid and wilderness safety. We have strict safety protocols and emergency evacuation plans in place.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
 
- <section style="background: #ffffff; color: #222; padding: 100px 5%;" id="booking">
+ <section style="background: #ffffff; color: #222; padding: 45px 5%;" id="booking" >
     <div class="booking-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; max-width: 1200px; margin: 0 auto;">
         
         <div class="contact-info">
@@ -1311,12 +1864,12 @@ footer {
                 </span></p>
                 
                 <p style="margin-bottom: 15px; color: #1a1a1a;"><strong><i class="fas fa-phone" style="color: #c5a059; margin-right: 10px;"></i> Call Us:</strong><br>
-                <span style="padding-left: 25px; display: block; font-size: 0.95rem; color: #555;"> <a href="tel:+67576135708" style="text-decoration: none; color: inherit;">+675 7613 5708</a> |  <a href="tel:+67572241835" style="text-decoration: none; color: inherit;">+675 7224 1835</a></span></p>
-                
-<a href="https://wa.me/67572241835" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">
+                <span style="padding-left: 25px; display: block; font-size: 0.95rem; color: #555;"> <a href="tel:+67576135708" style="text-decoration: none; color: inherit;">+675 7613 5708</a> |  <a href="tel:+67572241835" style="text-decoration: none; color: inherit;">+675 7224 1835</a></span>
+            
+                  <a href="https://wa.me/67572241835" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">
                         <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Business
                     </a>
-
+</p>
 
                 <p style="margin-bottom: 0; color: #1a1a1a;"><strong><i class="fas fa-envelope" style="color: #c5a059; margin-right: 10px;"></i> Email:</strong><br>
                 <span style="padding-left: 25px; display: block; font-size: 0.95rem; color: #555;">kokodafootsteps@gmail.com</span></p>
@@ -1362,6 +1915,21 @@ footer {
         <a href="#booking" class="btn-reserve" style="border-radius: 4px;">Book Now</a>
     </div>
 
+
+<footer style="background: #000; color: #fff; padding: 85px 7%; text-align: center;" class="page-section">
+    <div class="footer-socials" style="margin-bottom: 15px; font-size: 1.4rem; display: flex; justify-content: center; gap: 25px;">
+        <a href="https://www.facebook.com/kokoda.footstepstrekking/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/kokodafootsteps/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/kokoda-footsteps-trekking-2379b0b0/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.tiktok.com/@kokodatrack" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+        <a href="https://wa.me/67572241835" style="color: #25D366 !important;"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    
+    <p style="font-size: 0.85rem; color: #999; letter-spacing: 1px; text-transform: uppercase;">
+        &copy; 2026 Kokoda Footsteps Trekking Tours. All Rights Reserved.
+    </p>
+</footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -1451,21 +2019,47 @@ var testimonialSwiper = new Swiper(".testimonialSwiper", {
 </script>
 
 
-<footer style="background: #000; color: #fff; padding: 75px 5%; text-align: center;">
-    <div class="footer-socials" style="margin-bottom: 25px; font-size: 1.4rem; display: flex; justify-content: center; gap: 25px;">
-        <a href="https://www.facebook.com/kokoda.footstepstrekking/" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/kokodafootsteps/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/kokoda-footsteps-trekking-2379b0b0/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.tiktok.com/@kokodatrack" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="#"><i class="fab fa-telegram"></i></a>
-        <a href="https://wa.me/67572241835" style="color: #25D366 !important;"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    
-    <p style="font-size: 0.85rem; color: #999; letter-spacing: 1px; text-transform: uppercase;">
-        &copy; 2026 Kokoda Footsteps Trekking Tours. All Rights Reserved.
-    </p>
-</footer>
 
+
+<script>
+  // FAQ Accordion Functionality
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      // Get the parent faq-item element
+      const faqItem = button.closest('.faq-item');
+      // Find the corresponding faq-answer within the same faq-item
+      const answer = faqItem.querySelector('.faq-answer');
+      // Find the icon within the button
+      const icon = button.querySelector('.faq-icon');
+
+      // Toggle the 'active' class on the button for visual feedback
+      button.classList.toggle('active');
+      // Toggle the visibility of the answer by toggling a class
+      answer.classList.toggle('open');
+
+      // Change the icon based on the 'open' state
+      if (answer.classList.contains('open')) {
+        icon.textContent = '-'; // Show minus when open
+      } else {
+        icon.textContent = '+'; // Show plus when closed
+      }
+
+      // Optional: Close other open FAQs when a new one is opened
+      // This part ensures only one FAQ is open at a time.
+      document.querySelectorAll('.faq-item').forEach(otherFaqItem => {
+        if (otherFaqItem !== faqItem) {
+          const otherButton = otherFaqItem.querySelector('.faq-question');
+          const otherAnswer = otherFaqItem.querySelector('.faq-answer');
+          const otherIcon = otherButton.querySelector('.faq-icon');
+
+          otherButton.classList.remove('active');
+          otherAnswer.classList.remove('open');
+          otherIcon.textContent = '+'; // Reset icon to plus
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
